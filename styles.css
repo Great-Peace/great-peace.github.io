@@ -157,6 +157,18 @@ body {
     padding-left: 1rem;
 }
 
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item h3 {
+    margin: 0;
+    flex: 1;
+}
+
 .experience-header {
     display: flex;
     justify-content: space-between;
