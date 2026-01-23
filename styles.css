@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', 'Noto Sans CJK SC', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header - Fixed at top */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+    padding: 1rem 2rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #2563eb;
+}
+
+/* Container - Below header */
+.container {
+    display: flex;
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+}
+
+/* Sidebar - Fixed, non-scrollable */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 400px;
+    height: calc(100vh - 60px);
+    background: #f8f9fa;
+    border-right: 1px solid #e0e0e0;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.profile-title {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.info-item {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-item:hover {
+    color: #2563eb;
+}
+
+/* Main content - Scrollable */
+.content {
+    margin-left: 400px;
+    padding: 2rem 3rem;
+    width: calc(100% - 400px);
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.section {
+    margin-bottom: 3rem;
+    max-width: 900px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.section h3 {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 1rem;
+    color: #2563eb;
+}
+
+.section p {
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section li {
+    margin-bottom: 0.8rem;
+}
+
+/* Timeline items */
+.timeline-item {
+    margin-bottom: 2.5rem;
+    padding-left: 1rem;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #1a1a1a;
+}
+
+.company-name {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 0.3rem;
+}
+
+.tools {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.timeline-date {
+    color: #666;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.achievements {
+    margin-left: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.achievements li {
+    margin-bottom: 0.8rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Publications */
+.publication-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.pub-venue {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Projects */
+.project-item {
+    margin-bottom: 2.5rem;
+    padding: 1.2rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #2563eb;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #1a1a1a;
+}
+
+.project-course {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 0.3rem;
+}
+
+.project-research {
+    font-style: italic;
+    color: #2563eb;
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+}
+
+/* Skills */
+.skills-category {
+    margin-bottom: 2rem;
+}
+
+.skills-category h3 {
+    font-size: 1.1rem;
+    color: #2563eb;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.skills-category p {
+    color: #444;
+    line-height: 1.8;
+}
+
+.skills-category ul {
+    margin-left: 1.2rem;
+}
+
+.skills-category li {
+    margin-bottom: 0.6rem;
+    color: #444;
+}
+
+.achievement-date {
+    float: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .nav {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+}
