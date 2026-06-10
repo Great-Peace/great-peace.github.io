@@ -17,7 +17,7 @@
 
 ### 👩‍💻 About Me
 
-- AI/ML Software Engineer with over 5 years professional programming experience
+- AI/ML Software Engineer with over 5 years of professional programming experience
 - M.S. in Information Technology, Carnegie Mellon University
 - Based in Leeds, United Kingdom
 - Open to software engineering roles
