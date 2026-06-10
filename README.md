@@ -17,7 +17,7 @@
 
 ### 👩‍💻 About Me
 
-- Software engineer
+- AI/ML Software Engineer with over 5 years professional programming experience
 - M.S. in Information Technology, Carnegie Mellon University
 - Based in Leeds, United Kingdom
 - Open to software engineering roles
@@ -67,7 +67,7 @@
 
 ---
 
-### 📊 GitHub Statistics
+<!-- ### 📊 GitHub Statistics
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Great-Peace&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=A78BFA&text_color=C9D1D9&count_private=true" alt="GitHub Stats" height="165" />
@@ -76,7 +76,7 @@
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Great-Peace&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=C9D1D9&langs_count=8" alt="Top Languages" height="165" />
-</div>
+</div> -->
 
 ---
 
@@ -88,7 +88,7 @@
 
 ---
 
-### 🌟 Featured Projects
+<!-- ### 🌟 Featured Projects
 
 <div align="center">
 
@@ -98,7 +98,7 @@
   [![Data Inference & Applied ML](https://github-readme-stats.vercel.app/api/pin/?username=Great-Peace&repo=Data-Science-Projects-DIAML&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=C9D1D9&icon_color=A78BFA)](https://github.com/Great-Peace/Data-Science-Projects-DIAML)
   [![Information Security Projects](https://github-readme-stats.vercel.app/api/pin/?username=Great-Peace&repo=Information-Security-Projects-INFOSEC&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=C9D1D9&icon_color=A78BFA)](https://github.com/Great-Peace/Information-Security-Projects-INFOSEC)
 
-</div>
+</div> -->
 
 ---
 

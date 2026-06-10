@@ -17,7 +17,7 @@
 
 ### 👩‍💻 About Me
 
-- AI/ML Software Engineer with over 5 years programming experience
+- AI/ML Software Engineer with over 5 years of professional programming experience
 - M.S. in Information Technology, Carnegie Mellon University
 - Based in Leeds, United Kingdom
 - Open to software engineering roles
@@ -67,9 +67,9 @@
 
 ---
 
-### 📊 GitHub Statistics
+<!-- ### 📊 GitHub Statistics
 
-<!-- <div align="center">
+<div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Great-Peace&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=A78BFA&text_color=C9D1D9&count_private=true" alt="GitHub Stats" height="165" />
   <img src="https://streak-stats.demolab.com/?user=Great-Peace&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=8B5CF6&currStreakLabel=8B5CF6" alt="GitHub Streak" height="165" />
 </div>
@@ -88,8 +88,8 @@
 
 ---
 
-### 🌟 Featured Projects
-<!-- 
+<!-- ### 🌟 Featured Projects
+
 <div align="center">
 
   [![TaskFlowAPI](https://github-readme-stats.vercel.app/api/pin/?username=Great-Peace&repo=TaskFlowAPI&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&text_color=C9D1D9&icon_color=A78BFA)](https://github.com/Great-Peace/TaskFlowAPI)
