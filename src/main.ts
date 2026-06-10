@@ -1,76 +1,78 @@
-// Navigation functionality
-class Navigation {
-    private navLinks: NodeListOf<HTMLAnchorElement>;
-    private sections: NodeListOf<HTMLElement>;
+// Tab navigation with hash routing
+class Tabs {
+    private links: NodeListOf<HTMLButtonElement>;
+    private panels: NodeListOf<HTMLElement>;
+    private valid: string[];
+    private fallback: string;
 
     constructor() {
-        this.navLinks = document.querySelectorAll('.nav-link');
-        this.sections = document.querySelectorAll('.section');
+        this.links = document.querySelectorAll<HTMLButtonElement>('.tab-link');
+        this.panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+        this.valid = Array.from(this.panels)
+            .map(p => p.dataset.panel)
+            .filter((v): v is string => Boolean(v));
+        this.fallback = this.valid[0] ?? 'projects';
         this.init();
     }
 
     private init(): void {
-        // Handle navigation clicks
-        this.navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href')?.substring(1);
-                if (targetId) {
-                    this.scrollToSection(targetId);
-                    this.setActiveLink(link);
+        this.links.forEach(link => {
+            link.addEventListener('click', () => {
+                const tab = link.dataset.tab;
+                if (tab) {
+                    // Setting the hash triggers `hashchange`, which calls activate().
+                    if (window.location.hash === `#${tab}`) {
+                        this.activate(tab);
+                    } else {
+                        window.location.hash = tab;
+                    }
                 }
             });
         });
 
-        // Handle scroll to update active nav
-        const content = document.querySelector('.content');
-        if (content) {
-            content.addEventListener('scroll', () => this.updateActiveNavOnScroll());
-        }
+        window.addEventListener('hashchange', () => this.activate(this.currentTab()));
+        this.activate(this.currentTab());
     }
 
-    private scrollToSection(sectionId: string): void {
-        const section = document.getElementById(sectionId);
-        const content = document.querySelector('.content') as HTMLElement;
-        
-        if (section && content) {
-            const offsetTop = section.offsetTop - content.offsetTop;
-            content.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+    private currentTab(): string {
+        const fromHash = window.location.hash.replace(/^#/, '');
+        return this.valid.includes(fromHash) ? fromHash : this.fallback;
     }
 
-    private setActiveLink(activeLink: HTMLAnchorElement): void {
-        this.navLinks.forEach(link => link.classList.remove('active'));
-        activeLink.classList.add('active');
+    private activate(tab: string): void {
+        this.links.forEach(link =>
+            link.classList.toggle('active', link.dataset.tab === tab)
+        );
+        this.panels.forEach(panel =>
+            panel.classList.toggle('active', panel.dataset.panel === tab)
+        );
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
 
-    private updateActiveNavOnScroll(): void {
-        const content = document.querySelector('.content') as HTMLElement;
-        if (!content) return;
+// Contact form -> opens the user's mail client with a pre-filled message
+class ContactForm {
+    private readonly to = 'pbakare@alumni.cmu.edu';
 
-        const scrollPosition = content.scrollTop + 100;
+    constructor() {
+        const form = document.getElementById('contact-form') as HTMLFormElement | null;
+        if (!form) return;
 
-        this.sections.forEach(section => {
-            const sectionTop = (section as HTMLElement).offsetTop - content.offsetTop;
-            const sectionHeight = (section as HTMLElement).offsetHeight;
-            const sectionId = section.getAttribute('id');
+        form.addEventListener('submit', (e: Event) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const name = String(data.get('name') ?? '').trim();
+            const from = String(data.get('from') ?? '').trim();
+            const message = String(data.get('message') ?? '').trim();
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                this.navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+            const subject = encodeURIComponent(`Portfolio message from ${name || 'a visitor'}`);
+            const body = encodeURIComponent(`${message}\n\n— ${name}${from ? ` (${from})` : ''}`);
+            window.location.href = `mailto:${this.to}?subject=${subject}&body=${body}`;
         });
     }
 }
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new Navigation();
+    new Tabs();
+    new ContactForm();
 });

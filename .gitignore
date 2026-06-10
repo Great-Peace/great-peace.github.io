@@ -46,6 +46,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Reference material — not part of the published site
+Steph-crown-main/
+
+# Unused old profile photo backup
+peace_old.jpg
+
 # Optional: Large image files (uncomment if you don't want to track them)
 # *.jpg
 # *.jpeg
