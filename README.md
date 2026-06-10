@@ -17,13 +17,10 @@
 
 ### 👩‍💻 About Me
 
-I'm an **AI/ML software engineer** who ships generative-AI products and fine-tuned speech models, backed by **five years** of production backend engineering. I love turning hard research problems into deployable, trustworthy tools.
-
-- 🔭 Building generative-AI products — LLM pipelines on **AWS Bedrock** (Nova, Claude), OpenAI, Anthropic & Qwen
-- 🗣️ Researching **speech-based depression detection** with fine-tuned HuBERT & WavLM (F1 0.917 on Yoruba)
-- 💼 5+ years of production **backend engineering** in C#/.NET, Java & Python inside a regulated bank
-- 🎓 **M.S. Information Technology**, Carnegie Mellon University — AI & Software Engineering · Privacy & Security
-- 🌍 Based in Leeds, UK · open to AI/ML & software engineering roles
+- Software engineer
+- M.S. in Information Technology, Carnegie Mellon University
+- Based in Leeds, United Kingdom
+- Open to software engineering roles
 
 ---
 
