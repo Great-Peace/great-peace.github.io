@@ -66,7 +66,7 @@ class ContactForm {
             const message = String(data.get('message') ?? '').trim();
 
             const subject = encodeURIComponent(`Portfolio message from ${name || 'a visitor'}`);
-            const body = encodeURIComponent(`${message}\n\n— ${name}${from ? ` (${from})` : ''}`);
+            const body = encodeURIComponent(`${message}\n\n- ${name}${from ? ` (${from})` : ''}`);
             window.location.href = `mailto:${this.to}?subject=${subject}&body=${body}`;
         });
     }
