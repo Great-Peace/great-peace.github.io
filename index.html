@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peace Bakare</title>
     <meta name="description" content="Peace Bakare — AI/ML software engineer building generative-AI products on AWS Bedrock and fine-tuned speech models, with five years of production backend engineering.">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+            } catch (e) {}
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,6 +29,10 @@
     </script>
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <div class="page">
         <!-- ============ HERO ============ -->
         <header class="hero">
@@ -48,7 +61,7 @@
             <button class="tab-link" data-tab="projects">Projects</button>
             <button class="tab-link" data-tab="research">Research</button>
             <button class="tab-link" data-tab="work">Work</button>
-            <button class="tab-link" data-tab="institutions">Institutions</button>
+            <button class="tab-link" data-tab="education">Education</button>
             <button class="tab-link" data-tab="articles">Articles</button>
             <button class="tab-link" data-tab="testimonials">Testimonials</button>
             <button class="tab-link" data-tab="resume">Resume</button>
@@ -60,12 +73,15 @@
             <section class="tab-panel" id="projects" data-panel="projects">
                 <h2 class="panel-heading">Generative AI &amp; LLMs</h2>
                 <div class="card-grid">
-                    <div class="card static">
-                        <h3 class="card-title">Bundesliga Wrapped</h3>
-                        <p class="card-role">AWS World Sports Innovation Cup · Finalist (Germany)</p>
+                    <a class="card" href="https://github.com/suavelad/aws-hackathon" target="_blank" rel="noopener">
+                        <div class="card-top">
+                            <h3 class="card-title">Bundesliga Wrapped</h3>
+                            <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7m0-7L10 14M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>
+                        </div>
+                        <p class="card-role">AWS World Sports Innovation Cup · 2nd Place Globally</p>
                         <p class="card-body">A team project building "Bundesliga Wrapped" — a Spotify-Wrapped-style end-of-season recap of the league. My contribution: a Python pipeline that samples match-clip frames with OpenCV and calls Amazon Nova Lite via the AWS Bedrock Converse API to produce structured JSON on players, events, and goals that feeds the wrap's statistics.</p>
                         <div class="card-meta"><span class="tag">AWS Bedrock</span> May 2026</div>
-                    </div>
+                    </a>
                     <a class="card" href="https://light-bootcamp.streamlit.app/" target="_blank" rel="noopener">
                         <div class="card-top">
                             <h3 class="card-title">Streamlit Clinician-Training Platform</h3>
@@ -146,12 +162,15 @@
                         <p class="card-body">PropTech platform built with NestJS and MongoDB.</p>
                         <div class="card-meta"><span class="tag">NestJS</span> MongoDB</div>
                     </div>
-                    <div class="card static">
-                        <h3 class="card-title">SafeSpeak</h3>
+                    <a class="card" href="https://www.safespeak.health" target="_blank" rel="noopener">
+                        <div class="card-top">
+                            <h3 class="card-title">SafeSpeak</h3>
+                            <svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7m0-7L10 14M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>
+                        </div>
                         <p class="card-role">Mental Health App · Beta</p>
                         <p class="card-body">Secure mental-health support and community app, currently in beta testing. Incubated under the Mastercard Foundation Scholars Entrepreneurship Fund.</p>
                         <div class="card-meta">Ongoing</div>
-                    </div>
+                    </a>
                 </div>
 
                 <h2 class="panel-heading">Security &amp; Data</h2>
@@ -183,7 +202,7 @@
                 <div class="card-grid">
                     <div class="card static">
                         <h3 class="card-title">Speech-Based Depression Detection</h3>
-                        <p class="card-role">M.S. Thesis · CMU · Prof. Prasenjit Mitra &amp; Prof. Rita Singh</p>
+                        <p class="card-role">M.S. Thesis · CMU · Prof. Prasenjit Mitra</p>
                         <p class="card-body">Voice-based clinical depression detection reaching F1 0.917 (Yoruba) and 0.794 (English) with fine-tuned HuBERT and WavLM in PyTorch. Released YODEP — the first open bilingual English–Yoruba clinical speech corpus.</p>
                         <div class="card-meta">Sep 2025 – May 2026</div>
                     </div>
@@ -214,6 +233,17 @@
             <section class="tab-panel" id="work" data-panel="work">
                 <ul class="timeline">
                     <li class="trow">
+                        <div class="trow-date">Jun 2025 – Present</div>
+                        <div class="trow-main">
+                            <h3 class="trow-title">Senior Software Engineer</h3>
+                            <p class="trow-sub">IntelliNavix</p>
+                            <p class="trow-desc">Architected and developed the IntelliNavix professional training and career development platform end-to-end as sole engineer — full-stack in React 19/TypeScript, Bootstrap, and PHP/MySQL — serving UK professionals pursuing careers in data, business analysis, project management, and agile methodologies. Delivered course management, event registration, automated email pipelines, and an in-app AI chat assistant.</p>
+                            <div class="trow-tags">
+                                <span>React 19</span><span>TypeScript</span><span>PHP</span><span>MySQL</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="trow">
                         <div class="trow-date">Jul 2021 – Mar 2025</div>
                         <div class="trow-main">
                             <h3 class="trow-title">Backend Engineer</h3>
@@ -238,8 +268,8 @@
                 </ul>
             </section>
 
-            <!-- ===== INSTITUTIONS ===== -->
-            <section class="tab-panel" id="institutions" data-panel="institutions">
+            <!-- ===== EDUCATION ===== -->
+            <section class="tab-panel" id="education" data-panel="education">
                 <ul class="timeline">
                     <li class="trow">
                         <div class="trow-date">Aug 2024 – May 2026</div>
@@ -249,6 +279,17 @@
                             <p class="trow-desc">Concentration in AI &amp; Software Engineering and Privacy &amp; Security. Coursework: Introduction to Deep Learning (Bhiksha Raj), Machine Learning for Signal Processing, Data Inference &amp; Applied ML, Usable Privacy &amp; Security.</p>
                             <div class="trow-tags">
                                 <span>AI &amp; Software Engineering</span><span>Privacy &amp; Security</span><span>Deep Learning</span><span>MLSP</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="trow">
+                        <div class="trow-date">June 2026</div>
+                        <div class="trow-main">
+                            <h3 class="trow-title">BlueDot Technical AI Safety</h3>
+                            <p class="trow-sub">BlueDot Impact</p>
+                            <p class="trow-desc">Completed the Technical AI Safety course covering alignment, model evaluations, and the technical foundations of AI safety research.</p>
+                            <div class="trow-tags">
+                                <span>AI Safety</span><span>Alignment</span>
                             </div>
                         </div>
                     </li>
@@ -280,18 +321,16 @@
                 </div>
             </section>
 
-            <!-- ===== TESTIMONIALS (placeholder — replace quotes) ===== -->
+            <!-- ===== TESTIMONIALS ===== -->
             <section class="tab-panel" id="testimonials" data-panel="testimonials">
                 <div class="card-grid">
-                    <!-- replace: real quote + attribution -->
                     <figure class="card static quote">
-                        <blockquote>"Add a short quote from a manager, collaborator, or advisor here — a sentence or two about working with you."</blockquote>
-                        <figcaption>— Name, Title / Company</figcaption>
+                        <blockquote>"Peace is the reason SafeSpeak exists as more than an idea on paper. As a co-founder, she doesn't just build the product — she carries the parts most engineers avoid, from compliance to recruitment, while still shipping core features herself. She has an unusual ability to zoom out and see the whole business, then zoom back in and write the code. I trust her judgment completely."</blockquote>
+                        <figcaption>— Cynthia Iradukunda, Co-Founder, SafeSpeak</figcaption>
                     </figure>
-                    <!-- replace: real quote + attribution -->
                     <figure class="card static quote">
-                        <blockquote>"A second testimonial goes here. Keep each one concise so the cards stay balanced."</blockquote>
-                        <figcaption>— Name, Title / Company</figcaption>
+                        <blockquote>"What stands out about Peace is how quickly she gets to the root of a problem instead of the symptom. Working alongside her at CMU-Africa, I saw her bring the same rigor to a messy research question that she'd bring to production code — asking the right questions early, then following through until the result actually holds up. That combination of curiosity and discipline is rare."</blockquote>
+                        <figcaption>— Damilare Olatunji, Research Engineer &amp; MLOps, CMU Africa</figcaption>
                     </figure>
                 </div>
             </section>
@@ -349,8 +388,8 @@
                 <h2 class="panel-heading">Honors &amp; Awards</h2>
                 <div class="card-grid">
                     <div class="card static">
-                        <h3 class="card-title">AWS World Sports Innovation Cup — Finalist</h3>
-                        <p class="card-body">Finalist (in Germany) for an AWS Bedrock-powered sports video-analytics build.</p>
+                        <h3 class="card-title">AWS World Sports Innovation Cup — 2nd Place Globally</h3>
+                        <p class="card-body">Team placed 2nd globally after a 7-week competition on real Bundesliga match data, for an AWS Bedrock-powered sports video-analytics build.</p>
                         <div class="card-meta">2026</div>
                     </div>
                     <div class="card static">
@@ -408,9 +447,8 @@
                         <p class="card-body">Open to AI/ML and software engineering roles, and happy to talk about generative-AI delivery, speech ML, or backend systems.</p>
                         <ul class="contact-list">
                             <li><a href="mailto:pbakare@alumni.cmu.edu">pbakare@alumni.cmu.edu</a></li>
-                            <li><span class="muted">+44 7480 861985</span></li>
+                            <li><span class="muted">+44 7405 351659</span></li>
                             <li><span class="muted">Leeds, United Kingdom</span></li>
-                            <li><span class="muted">UK High Potential Individual visa</span></li>
                         </ul>
                     </div>
                     <form class="contact-form" id="contact-form">

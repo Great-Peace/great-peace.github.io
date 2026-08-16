@@ -3,12 +3,29 @@
     --card: #17171b;
     --card-hover: #1e1e24;
     --border: #26262e;
+    --border-hover: #34343f;
     --text: #e7e7ea;
     --muted: #9b9ba3;
     --accent: #818cf8;
     --grad: linear-gradient(90deg, #6366f1, #a855f7);
+    --tag-bg: rgba(129, 140, 248, 0.12);
+    --tags-text: #c9c9d4;
     --radius: 14px;
     --maxw: 980px;
+}
+
+:root[data-theme="light"] {
+    --bg: #ffffff;
+    --card: #f6f6f8;
+    --card-hover: #ececf1;
+    --border: #e3e3e9;
+    --border-hover: #cacad4;
+    --text: #17171b;
+    --muted: #5c5c68;
+    --accent: #6366f1;
+    --grad: linear-gradient(90deg, #6366f1, #a855f7);
+    --tag-bg: rgba(99, 102, 241, 0.1);
+    --tags-text: #4b4b56;
 }
 
 * {
@@ -19,12 +36,45 @@
 
 html { scroll-behavior: smooth; }
 
+/* ============ THEME TOGGLE ============ */
+.theme-toggle {
+    position: fixed;
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.2s, border-color 0.2s;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -172,7 +222,7 @@ a { color: inherit; text-decoration: none; }
 
 a.card:hover {
     background: var(--card-hover);
-    border-color: #34343f;
+    border-color: var(--border-hover);
     transform: translateY(-3px);
 }
 
@@ -226,7 +276,7 @@ a.card:hover .ext { stroke: var(--accent); }
 }
 
 .tag {
-    background: rgba(129, 140, 248, 0.12);
+    background: var(--tag-bg);
     color: var(--accent);
     border-radius: 999px;
     padding: 0.2rem 0.7rem;
@@ -372,7 +422,7 @@ a.card:hover .ext { stroke: var(--accent); }
 }
 .footer-meta a:hover { color: var(--accent); }
 
-/* ============ TIMELINE (Work / Institutions) ============ */
+/* ============ TIMELINE (Work / Education) ============ */
 .timeline { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
 
 .trow {
@@ -385,14 +435,14 @@ a.card:hover .ext { stroke: var(--accent); }
     padding: 1.7rem 2rem;
     transition: background 0.2s, border-color 0.2s;
 }
-.trow:hover { background: var(--card-hover); border-color: #34343f; }
+.trow:hover { background: var(--card-hover); border-color: var(--border-hover); }
 
 .trow-date { color: var(--muted); font-size: 0.9rem; padding-top: 0.15rem; }
 .trow-title { font-size: 1.12rem; font-weight: 700; color: var(--text); line-height: 1.3; }
 .trow-sub { color: var(--muted); font-size: 0.95rem; margin-top: 0.4rem; }
 .trow-desc { color: var(--muted); font-size: 0.92rem; margin-top: 0.8rem; }
 
-.trow-tags { margin-top: 1.3rem; font-size: 0.9rem; color: #c9c9d4; line-height: 1.9; }
+.trow-tags { margin-top: 1.3rem; font-size: 0.9rem; color: var(--tags-text); line-height: 1.9; }
 .trow-tags span:not(:first-child)::before { content: "·"; margin: 0 0.6rem; color: var(--muted); }
 
 /* ============ RESPONSIVE ============ */
@@ -406,4 +456,5 @@ a.card:hover .ext { stroke: var(--accent); }
     .trow-tags { margin-top: 1rem; }
     .contact { grid-template-columns: 1fr; gap: 2rem; }
     .footer-meta { flex-direction: column; gap: 0.4rem; }
+    .theme-toggle { top: 1rem; right: 1rem; width: 36px; height: 36px; }
 }

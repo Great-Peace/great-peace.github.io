@@ -72,7 +72,32 @@ class ContactForm {
     }
 }
 
+// Light/dark theme toggle. Initial theme is applied synchronously by an
+// inline script in <head> (before first paint) to avoid a flash; this class
+// only handles the button click and persists the choice.
+class ThemeToggle {
+    private readonly key = 'theme';
+    private readonly root = document.documentElement;
+
+    constructor() {
+        const button = document.getElementById('theme-toggle');
+        button?.addEventListener('click', () => this.toggle());
+    }
+
+    private toggle(): void {
+        const isLight = this.root.getAttribute('data-theme') === 'light';
+        if (isLight) {
+            this.root.removeAttribute('data-theme');
+            localStorage.setItem(this.key, 'dark');
+        } else {
+            this.root.setAttribute('data-theme', 'light');
+            localStorage.setItem(this.key, 'light');
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     new Tabs();
     new ContactForm();
+    new ThemeToggle();
 });
